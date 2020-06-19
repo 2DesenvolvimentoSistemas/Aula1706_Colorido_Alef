@@ -5,6 +5,7 @@
  */
 package view;
 
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -105,29 +106,52 @@ public class AppColorido extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void mniAzulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniAzulActionPerformed
-        // TODO add your handling code here:
-        //Criação e Instância Objeto da Classe Conversor.
-        Azul azul = new Azul();
+    
+    public void exibirJanela(JInternalFrame janela){
         
+        if(janela instanceof Vermelho){
+            janela.setTitle("Presta atenção no Tio");
+        }else{
+            janela.setTitle("Vem com o Tio.");
+        }
+
         //Adicionar Objeto na Interface.
-        dtpColorido.add(azul);
+        dtpColorido.add(janela);
         
         //Exibindo o Objeto.
-        azul.show();
+        janela.show();
+    }
+    
+    
+    private void mniAzulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniAzulActionPerformed
+        // TODO add your handling code here:
+        //Chamada do Metodo Exibir Janela.
+        this.exibirJanela(new Azul());
+        
+        
+        //Criação e Instância Objeto da Classe Conversor.
+        //Azul azul = new Azul();
+        
+        //Adicionar Objeto na Interface.
+        //dtpColorido.add(azul);
+        
+        //Exibindo o Objeto.
+        //azul.show();
     }//GEN-LAST:event_mniAzulActionPerformed
 
     private void mniVermelhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniVermelhoActionPerformed
         // TODO add your handling code here:
+        //Chamada do Metodo Exibir Janela.
+        this.exibirJanela(new Vermelho());
+        
         //Criação e Instância Objeto da Classe Conversor.
-        Vermelho vermelho = new Vermelho();
+        //Vermelho vermelho = new Vermelho();
         
         //Adicionar Objeto na Interface.
-        dtpColorido.add(vermelho);
+        //dtpColorido.add(vermelho);
         
         //Exibindo o Objeto.
-        vermelho.show();
+        //vermelho.show();
     }//GEN-LAST:event_mniVermelhoActionPerformed
 
     private void mniSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSairActionPerformed
